@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "297513150082",
+    "firebase_url": "https://inscadeapp.firebaseio.com",
+    "project_id": "inscadeapp",
+    "storage_bucket": "inscadeapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297513150082:android:4b27f5c8f5934633",
+        "android_client_info": {
+          "package_name": "com.example.kilam.inscade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297513150082-36gqotsqs25fbrihl6vfef7c8235tobr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kilam.inscade",
+            "certificate_hash": "d4ac5b00a152c2618f2c37ead1a3952c1cc1752f"
+          }
+        },
+        {
+          "client_id": "297513150082-8uv6hqe99b2m1ppl07mcjk0tb9rnatqd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kilam.inscade",
+            "certificate_hash": "5fbbc61fa7a866bc1b9b7fbcd5634ccbc5aeb0d3"
+          }
+        },
+        {
+          "client_id": "297513150082-mjlnstskmh0ptv90d36ran50accug53r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB49mMVzc-sK9dKaY4VpSB0kwq_NnVoJiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297513150082-mjlnstskmh0ptv90d36ran50accug53r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297513150082:android:d36e967223c2d6d0",
+        "android_client_info": {
+          "package_name": "com.example.kilam.inscadeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297513150082-ppfm7fk9rubn93h0jk0mjr779veuckd6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kilam.inscadeapp",
+            "certificate_hash": "5fbbc61fa7a866bc1b9b7fbcd5634ccbc5aeb0d3"
+          }
+        },
+        {
+          "client_id": "297513150082-mjlnstskmh0ptv90d36ran50accug53r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB49mMVzc-sK9dKaY4VpSB0kwq_NnVoJiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297513150082-mjlnstskmh0ptv90d36ran50accug53r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
