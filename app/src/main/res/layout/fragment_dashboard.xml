@@ -5,15 +5,111 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
         tools:context=".ActivityLogin">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_person"
+            android:src="@drawable/profile_picture"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/tv_name"
+            style="@style/textStandard"
+            android:text="Malik Anhar Maulana"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_person"/>
+
+    <TextView
+            android:id="@+id/tx_device"
+            style="@style/textStandard"
+            android:text="Device ID:"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"/>
+
+    <TextView
+            android:id="@+id/tv_deviceID"
+            style="@style/textStandard"
+            android:text="CAD001"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toEndOf="@id/tx_device"
+            app:layout_constraintTop_toTopOf="@id/tx_device"/>
+
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/client_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_person">
+
+        <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/colorGrayLight"/>
+
+        <TextView
+                android:id="@+id/tx_clientname"
+                style="@style/textStandard"
+                android:text="Patient"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/line1"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_clientname"
+            style="@style/textStandard"
+            android:text="Raihan Hamid Suraperwata"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@id/tx_clientname"
+            app:layout_constraintStart_toEndOf="@id/tx_clientname"/>
+
+        <TextView
+                android:id="@+id/tv_clientgender"
+                style="@style/textStandard"
+                android:text="Male, "
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tx_clientname"
+                app:layout_constraintStart_toStartOf="@id/tv_clientname"/>
+
+        <TextView
+                android:id="@+id/tv_clientage"
+                style="@style/textStandard"
+                android:text="21 years old"
+                app:layout_constraintTop_toTopOf="@id/tv_clientgender"
+                app:layout_constraintStart_toEndOf="@id/tv_clientgender"/>
+
+        <TextView
+                android:id="@+id/tv_phone"
+                style="@style/textStandard"
+                android:text="081234567890"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_clientgender"
+                app:layout_constraintStart_toStartOf="@id/tv_clientname"/>
+
+        <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_phone"
+                android:background="@color/colorGrayLight"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>

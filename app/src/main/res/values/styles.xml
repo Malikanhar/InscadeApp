@@ -32,5 +32,12 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
+    
+    <style name="textStandard">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorGrayDark</item>
+    </style>
 
 </resources>
