@@ -23,6 +23,7 @@ class ActivityLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(activity_login)
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.decorView.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -38,8 +39,8 @@ class ActivityLogin : AppCompatActivity() {
         btn_lupa_password.setOnClickListener{showDialog() }
 
         btn_login.setOnClickListener{
-            var email = tiet_email_log.text.toString().trim()
-            var pass = tiet_password_log.text.toString().trim()
+            var email = et_email.text.toString().trim()
+            var pass = et_pass.text.toString().trim()
 
             if(validateForm(email, pass)){
                 val progressDialog = ProgressDialog(this)
@@ -69,7 +70,7 @@ class ActivityLogin : AppCompatActivity() {
     }
 
     private fun isPasswordValid(password: String): Boolean {
-        return password.length >= 6
+        return password.length >= 8
     }
 
     private fun validateForm(email: String, pass: String): Boolean{
@@ -96,7 +97,7 @@ class ActivityLogin : AppCompatActivity() {
             WindowManager.LayoutParams.WRAP_CONTENT)
 
         dialogs.show()
-        val etemail = dialogs.findViewById(R.id.et_emailReset) as EditText
+        val etemail = dialogs.findViewById(R.id.et_forgot_password) as EditText
         val btnReset = dialogs.findViewById(R.id.btn_resetPass) as Button
         btnReset.setOnClickListener {
             etemail.isEnabled = false

@@ -17,10 +17,10 @@ class ActivityRegister:AppCompatActivity() {
 
         val mAuth = FirebaseAuth.getInstance()
         btn_daftar.setOnClickListener {
-            var name = tiet_nama.text.toString().trim()
-            var notelp = tiet_notelp.text.toString().trim()
-            var email = tiet_email.text.toString().trim()
-            var pass = tiet_password.text.toString().trim()
+            var name = et_nama.text.toString().trim()
+            var notelp = et_notelp.text.toString().trim()
+            var email = et_email.text.toString().trim()
+            var pass = et_pass.text.toString().trim()
 
             if (validateForm(name, notelp, email, pass)) {
                 val progressDialog = ProgressDialog(this)
@@ -44,8 +44,14 @@ class ActivityRegister:AppCompatActivity() {
     }
 
     private fun validateForm(name: String, notelp: String, email: String, password: String): Boolean {
-        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(notelp) || !isEmailValid(email) || !isPasswordValid(password)) {
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(notelp) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
             Toast.makeText(this, "There's an empty field", Toast.LENGTH_SHORT).show()
+            return false
+        }else if(!isEmailValid(email)){
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show()
+            return false
+        }else if(!isPasswordValid(password)){
+            Toast.makeText(this, "Invalid password", Toast.LENGTH_SHORT).show()
             return false
         }
         return true
@@ -58,6 +64,6 @@ class ActivityRegister:AppCompatActivity() {
     }
 
     private fun isPasswordValid(password: String): Boolean {
-        return password.length >= 6
+        return password.length >= 8
     }
 }

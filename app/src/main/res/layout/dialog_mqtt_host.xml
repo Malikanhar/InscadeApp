@@ -8,26 +8,25 @@
         android:padding="24dp">
 
     <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/tv_title_mqtt"
             style="@style/TitleDialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FORGET PASSWORD"
+            android:text="MQTT HOST"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-    />
+            app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
-            android:id="@+id/et_forgot_password"
+            android:id="@+id/et_"
             style="@style/EditTextDefault"
             android:layout_marginEnd="0dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="16dp"
-            android:hint="email@example.com"
+            android:hint="192.168.1.1"
             android:inputType="textEmailAddress"
-            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+            app:layout_constraintTop_toBottomOf="@id/tv_title_mqtt" />
 
-    <Button android:id="@+id/btn_resetPass"
+    <Button android:id="@+id/btn_edit_"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_btn"
@@ -35,8 +34,6 @@
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
             android:layout_marginTop="16dp"
-            android:text="RESET PASSWORD"
-            app:layout_constraintTop_toBottomOf="@+id/et_forgot_password"/>
-
-
+            android:text="Save"
+            app:layout_constraintTop_toBottomOf="@+id/et_"/>
 </android.support.constraint.ConstraintLayout>
