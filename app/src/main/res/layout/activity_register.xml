@@ -8,10 +8,19 @@
         android:background="@android:color/white"
         tools:context=".ActivityRegister">
 
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
     <TextView
             android:id="@+id/tx_logo"
             android:text="INSCADE"
-            android:layout_marginTop="36dp"
             style="@style/TextLogoOrange"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,5 +80,5 @@
             android:layout_marginEnd="16dp"
             android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@id/et_pass"/>
-
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

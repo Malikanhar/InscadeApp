@@ -25,15 +25,20 @@ class AdapterResult
         notifyDataSetChanged()
     }
 
+    fun removeAll(){
+        listResult.clear()
+        notifyDataSetChanged()
+    }
+
     inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private var tv_minute = itemView.findViewById<TextView>(R.id.tv_timer_minute)
-        private var tv_second =itemView.findViewById<TextView>(R.id.tv_timer_second)
+//        private var tv_minute = itemView.findViewById<TextView>(R.id.tv_timer_minute)
+//        private var tv_second =itemView.findViewById<TextView>(R.id.tv_timer_second)
         private var tv_result = itemView.findViewById<TextView>(R.id.tv_result)
 
         fun bindView(resultModel: Result){
-            tv_minute.text = resultModel.minute
-            tv_second.text = resultModel.second
-            tv_result.text = "Condition : " + resultModel.predict
+//            tv_minute.text = resultModel.minute
+//            tv_second.text = resultModel.second
+            tv_result.text = resultModel.predict
         }
     }
 }

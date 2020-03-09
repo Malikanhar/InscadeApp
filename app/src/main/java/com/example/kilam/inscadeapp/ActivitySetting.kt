@@ -9,7 +9,6 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.example.kilam.inscadeapp.R.layout.*
 import kotlinx.android.synthetic.main.activity_setting.*
@@ -20,7 +19,8 @@ class ActivitySetting : AppCompatActivity(){
 
     private var mqttHost : String = ""
     private var mqttPort : String = ""
-    private var topic : String = ""
+    private var topic1 : String = ""
+    private var topic2 : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,11 +29,13 @@ class ActivitySetting : AppCompatActivity(){
         pref = applicationContext.getSharedPreferences("MQTT", Context.MODE_PRIVATE)
         mqttHost =  pref.getString("mqttHost", "")
         mqttPort =  pref.getString("mqttPort", "")
-        topic =  pref.getString("mqttTopic", "")
+        topic1 =  pref.getString("mqttTopic1", "")
+        topic2 =  pref.getString("mqttTopic2", "")
 
         tv_host.setText(mqttHost)
         tv_port.setText(mqttPort)
-        tv_topic.setText(topic)
+        tv_topic1.setText(topic1)
+        tv_topic2.setText(topic2)
 
         field_host.setOnClickListener {
             edit_("host")
@@ -41,8 +43,11 @@ class ActivitySetting : AppCompatActivity(){
         field_port.setOnClickListener {
             edit_("port")
         }
-        field_topic.setOnClickListener {
-            edit_("topic")
+        field_topic1.setOnClickListener {
+            edit_("topic1")
+        }
+        field_topic2.setOnClickListener {
+            edit_("topic2")
         }
     }
 
@@ -60,19 +65,21 @@ class ActivitySetting : AppCompatActivity(){
         val et = dialogs.findViewById(R.id.et_) as EditText
         val btnEdit = dialogs.findViewById(R.id.btn_edit_) as Button
 
-//        val tvtitle = findViewById<TextView>(R.id.tv_title_mqtt)
-
         if (content.equals("host")) {
-//            tvtitle.text = "MQTT HOST"
+            dialogs.tv_title_mqtt.text = "MQTT HOST"
             et.setText(mqttHost)
         }
         else if (content.equals("port")) {
-//            tvtitle.setText("MQTT PORT")
+            dialogs.tv_title_mqtt.text = ("MQTT PORT")
             et.setText(mqttPort)
         }
+        else if (content.equals("topic1")) {
+            dialogs.tv_title_mqtt.text  = "MQTT TOPIC"
+            et.setText(topic1)
+        }
         else {
-            tv_title_mqtt.text = "MQTT TOPIC"
-            et.setText(topic)
+            dialogs.tv_title_mqtt.text  = "MQTT TOPIC"
+            et.setText(topic2)
         }
 
         btnEdit.setOnClickListener {
@@ -98,14 +105,25 @@ class ActivitySetting : AppCompatActivity(){
                     dialogs.dismiss()
                 }
             }
-            else{
-                topic = et.text.toString().trim()
-                if (topic.equals("")) {
+            else if (content.equals("topic1")){
+                topic1 = et.text.toString().trim()
+                if (topic1.equals("")) {
                     Toast.makeText(this, "There's empty field", Toast.LENGTH_SHORT).show()
                 } else {
-                    pref.edit().putString("mqttTopic", topic).apply()
-                    tv_topic.setText(topic)
-                    Toast.makeText(this, "Successfully changed the Topic", Toast.LENGTH_SHORT).show()
+                    pref.edit().putString("mqttTopic1", topic1).apply()
+                    tv_topic1.setText(topic1)
+                    Toast.makeText(this, "Successfully changed the Topic 1", Toast.LENGTH_SHORT).show()
+                    dialogs.dismiss()
+                }
+            }
+            else{
+                topic2 = et.text.toString().trim()
+                if (topic2.equals("")) {
+                    Toast.makeText(this, "There's empty field", Toast.LENGTH_SHORT).show()
+                } else {
+                    pref.edit().putString("mqttTopic2", topic2).apply()
+                    tv_topic2.setText(topic2)
+                    Toast.makeText(this, "Successfully changed the Topic 2", Toast.LENGTH_SHORT).show()
                     dialogs.dismiss()
                 }
             }
